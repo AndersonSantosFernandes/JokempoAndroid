@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Jokempo</string>
+    <string name="msgJogador">Vem jogar comigo</string>
+    <string name="pedra">Pedra</string>
+    <string name="papel">Papel</string>
+    <string name="tesoura">Tesoura</string>
+    <string name="jogador">Jogador</string>
+    <string name="maquina">Máquina</string>
+    <string name="jogar">Jogar</string>
+    <string name="apostando">Vamos ver quem ganha!</string>
+
+</resources>
