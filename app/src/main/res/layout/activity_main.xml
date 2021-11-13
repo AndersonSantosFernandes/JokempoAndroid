@@ -1,162 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scroll"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@color/gray"
+    android:fillViewport="true"
 
     >
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
 
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
 
-    tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/titulo"
-        style="@style/radios"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="5dp"
-        android:text="@string/app_name"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/resposta"
-        style="@style/radios"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="5sp"
-        android:text="@string/msgJogador"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@id/titulo"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteX="165dp"
-        tools:layout_editor_absoluteY="53dp" />
-
-    <RadioGroup
-        android:id="@+id/grupoRadio"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        app:layout_constraintTop_toBottomOf="@id/imagemJokempo"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteX="48dp"
-        tools:layout_editor_absoluteY="266dp"
-        android:padding="10dp"
-        >
-
-        <RadioButton
-            android:id="@+id/radioPedra"
-            style="@style/radios"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/pedra" />
-
-        <RadioButton
-            android:id="@+id/radioPapel"
-            style="@style/radios"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/papel" />
-
-        <RadioButton
-            android:id="@+id/radioTesoura"
-            style="@style/radios"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/tesoura" />
-    </RadioGroup>
-
-    <LinearLayout
-        android:id="@+id/imagemJokempo"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/jogadorMaquina"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="124dp"
-        app:layout_constraintStart_toStartOf="parent"
-        >
-
-        <ImageView
-            android:id="@+id/imageJogador"
-            style="@style/image"
-            android:background="@drawable/papel"
-            app:srcCompat="@android:drawable/divider_horizontal_bright" />
-
-        <ImageView
-            android:id="@+id/imageOponente"
-            style="@style/image"
-            android:background="@drawable/tesoura"
-            app:srcCompat="@android:drawable/divider_horizontal_bright" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/jogadorMaquina"
-        android:layout_width="409dp"
-        android:layout_height="26dp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/resposta"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="97dp"
-        app:layout_constraintStart_toStartOf="parent">
-
+        tools:context=".MainActivity">
 
         <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
+            android:id="@+id/titulo"
+            style="@style/radios"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/jogador" />
+            android:padding="5dp"
+            android:text="@string/app_name"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
+            android:id="@+id/resposta"
+            style="@style/radios"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/maquina" />
-    </LinearLayout>
+            android:padding="5sp"
+            android:text="@string/msgJogador"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titulo"
+            tools:layout_editor_absoluteX="165dp"
+            tools:layout_editor_absoluteY="53dp" />
 
-    <Button
-        android:id="@+id/btJoga"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="120dp"
-        android:padding="10dp"
-        android:text="@string/jogar"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/saida2" />
+        <RadioGroup
+            android:id="@+id/grupoRadio"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:padding="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imagemJokempo"
+            tools:layout_editor_absoluteX="48dp"
+            tools:layout_editor_absoluteY="266dp">
 
-    <TextView
-        android:id="@+id/saida2"
-        style="@style/radios"
-        android:padding="5dp"
-        android:textColor="@color/black"
-        android:gravity="center"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/apostando"
-       app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/grupoRadio"
-        />
+            <RadioButton
+                android:id="@+id/radioPedra"
+                style="@style/radios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pedra" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <RadioButton
+                android:id="@+id/radioPapel"
+                style="@style/radios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/papel" />
+
+            <RadioButton
+                android:id="@+id/radioTesoura"
+                style="@style/radios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tesoura" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/imagemJokempo"
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/jogadorMaquina"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="124dp">
+
+            <ImageView
+                android:id="@+id/imageJogador"
+                style="@style/image"
+                android:background="@drawable/papel"
+                app:srcCompat="@android:drawable/divider_horizontal_bright" />
+
+            <ImageView
+                android:id="@+id/imageOponente"
+                style="@style/image"
+                android:background="@drawable/tesoura"
+                app:srcCompat="@android:drawable/divider_horizontal_bright" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/jogadorMaquina"
+            android:layout_width="409dp"
+            android:layout_height="26dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/resposta"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="97dp">
+
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/jogador" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/maquina" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btJoga"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="120dp"
+            android:padding="10dp"
+            android:text="@string/jogar"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/saida2" />
+
+        <TextView
+            android:id="@+id/saida2"
+            style="@style/radios"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/apostando"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/grupoRadio" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="30dp"
+            android:gravity="center"
+            tools:layout_editor_absoluteX="64dp"
+            tools:layout_editor_absoluteY="613dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btJoga"
+            >
+
+            <TextView
+                android:id="@+id/pontoJog"
+                style="@style/pontuacao"
+                android:text="@string/zero"
+
+                />
+
+            <TextView
+                android:id="@+id/pontoMaq"
+                style="@style/pontuacao"
+                android:text="@string/zero" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

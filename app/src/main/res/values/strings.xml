@@ -8,5 +8,6 @@
     <string name="maquina">Máquina</string>
     <string name="jogar">Jogar</string>
     <string name="apostando">Vamos ver quem ganha!</string>
+    <string name="zero">0</string>
 
 </resources>
